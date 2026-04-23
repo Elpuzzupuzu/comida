@@ -30,4 +30,4 @@ exports.lagrange = (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Error en Lagrange" });
   }
-};
+}; /// hace falta validar el 404

@@ -1,0 +1,105 @@
+/* HeroImage.css */
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-image__wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+}
+
+.hero-image__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  filter: contrast(1.08) saturate(1.1) brightness(0.88);
+}
+
+.hero-image__fade-left {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 1) 0%,
+    rgba(10, 10, 10, 0.96) 12%,
+    rgba(10, 10, 10, 0.82) 24%,
+    rgba(10, 10, 10, 0.5) 38%,
+    rgba(10, 10, 10, 0.18) 55%,
+    transparent 78%
+  );
+}
+
+.hero-image__fade-bottom {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.58) 0%,
+    transparent 34%
+  );
+}
+
+.hero-badge {
+  position: absolute;
+  right: 28px;
+  bottom: 36px;
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 10, 0.25);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.hero-badge__inner {
+  width: 82%;
+  height: 82%;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.hero-badge__top {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.hero-badge__middle {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 34px;
+  font-weight: 900;
+  margin: 3px 0;
+}
+
+.hero-badge__bottom {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fbbf24;
+}
