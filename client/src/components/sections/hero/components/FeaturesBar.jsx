@@ -1,81 +1,83 @@
 import React from "react";
 import { features } from "../data/heroData";
 
-export function FeaturesBar() {
+const icons = {
+  speed: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <path d="M12 14l4-4" />
+      <path d="M4.9 19a9 9 0 1 1 14.2 0" />
+    </svg>
+  ),
+
+  quality: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z" />
+      <path d="M9.5 12l2 2 4-4" />
+    </svg>
+  ),
+
+  delivery: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <rect x="2" y="7" width="11" height="10" rx="2" />
+      <path d="M13 10h4l3 3v4h-7z" />
+      <circle cx="7" cy="18" r="1.6" />
+      <circle cx="18" cy="18" r="1.6" />
+    </svg>
+  ),
+
+  hours: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </svg>
+  ),
+};
+
+export default function FeaturesBar() {
+  const mappedFeatures = features.map((item, index) => ({
+    ...item,
+    icon:
+      index === 0
+        ? icons.speed
+        : index === 1
+        ? icons.quality
+        : index === 2
+        ? icons.delivery
+        : icons.hours,
+  }));
+
   return (
-    <div
-      className="bh-features-grid"
-      style={{
-        position: "relative",
-        zIndex: 10,
-        display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)",
-        borderTop: "1px solid rgba(251,191,36,0.1)",
-        background: "rgba(8,8,8,0.98)",
-        backdropFilter: "blur(12px)",
-      }}
-    >
-      {features.map(({ emoji, label, value }, i) => (
-        <div
-          key={value}
-          className="bh-feature"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 14,
-            padding: "20px 32px",
-            borderRight:
-              i < features.length - 1
-                ? "1px solid rgba(255,255,255,0.06)"
-                : "none",
-            transition: "background 0.2s",
-            cursor: "default",
-          }}
-        >
+    <section className="relative z-10 border-t border-[#d4af5f]/10 bg-[#080808]/95 backdrop-blur-md">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        {mappedFeatures.map(({ label, value, icon }, i) => (
           <div
-            style={{
-              width: 38,
-              height: 38,
-              borderRadius: 10,
-              background: "rgba(251,191,36,0.1)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexShrink: 0,
-              fontSize: 18,
-            }}
+            key={value}
+            className={`group flex items-center gap-4 px-6 py-6 transition-all duration-300 hover:bg-white/[0.02]
+              ${
+                i !== mappedFeatures.length - 1
+                  ? "lg:border-r lg:border-white/[0.06]"
+                  : ""
+              }
+            `}
           >
-            {emoji}
-          </div>
+            {/* Icon */}
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#d4af5f]/10 text-[#d4af5f] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#d4af5f]/15">
+              <div className="h-5 w-5">{icon}</div>
+            </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
-            <span
-              style={{
-                fontSize: 9.5,
-                fontWeight: 700,
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.4)",
-              }}
-            >
-              {label}
-            </span>
+            {/* Text */}
+            <div className="flex flex-col">
+              <span className="text-[0.6rem] font-bold uppercase tracking-[0.22em] text-white/40">
+                {label}
+              </span>
 
-            <strong
-              style={{
-                fontFamily: "'Barlow Condensed',sans-serif",
-                fontSize: 15,
-                fontWeight: 700,
-                letterSpacing: "0.06em",
-                textTransform: "uppercase",
-                color: "#fff",
-              }}
-            >
-              {value}
-            </strong>
+              <strong className="mt-1 text-[0.95rem] font-semibold uppercase tracking-[0.06em] text-white">
+                {value}
+              </strong>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 }

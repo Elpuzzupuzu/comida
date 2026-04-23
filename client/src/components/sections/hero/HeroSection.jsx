@@ -3,7 +3,7 @@ import { HEADER_H } from "./data/heroData";
 import { heroGlobalStyles } from "./styles/heroStyles";
 import { HeroContent } from "./components/HeroContent";
 import { HeroImage } from "./components/HeroImage";
-import { FeaturesBar } from "./components/FeaturesBar";
+import  FeaturesBar  from "../../sections/hero/components/FeaturesBar";
 
 export default function HeroSection() {
   return (
