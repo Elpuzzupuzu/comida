@@ -1,5 +1,5 @@
 import { MENU_ITEMS } from "../../../data/menuItems";
-import ProductCard from "../../components/menu/ProductCard";
+import ProductCard from "../../../components/menu/productCard/ProductCard";
 
 export default function Menu() {
   return (
