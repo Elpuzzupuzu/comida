@@ -26,11 +26,12 @@ export default function Navbar() {
   return (
     <header className="relative z-30 w-full border-b border-[#d4af5f]/20 bg-[#0a0a0a]">
       <nav className="mx-auto grid h-20 w-full max-w-7xl grid-cols-[1fr_auto] items-center px-4 sm:h-24 sm:px-6 lg:grid-cols-[auto_1fr_auto] lg:gap-8 lg:px-10">
-        <Link to="/" onClick={closeMobileMenu} className="flex min-w-0 items-center gap-3 sm:gap-4">
+        
+        <Link to="/" onClick={closeMobileMenu} className="flex min-w-0 items-center gap-3">
           <img
             src={logo}
             alt="El Perro Callejero"
-            className="h-14 w-14 rounded-full border-2 border-[#f1ddb0] object-cover shadow-[0_0_0_3px_rgba(212,175,95,0.14)] sm:-mt-3 sm:h-20 sm:w-20 lg:-mt-4 lg:h-24 lg:w-24"
+            className="h-14 w-14 rounded-full border-2 border-[#f1ddb0] object-cover shadow-[0_0_0_3px_rgba(212,175,95,0.14)] sm:h-16 sm:w-16 lg:h-20 lg:w-20"
           />
 
           <div className="min-w-0 leading-none">
