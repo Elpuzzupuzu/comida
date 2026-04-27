@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { NAV_LINKS } from "../../data/navLinks";
+import ProductSearch from "../search/ProductSearch";
 import logo from "../../assets/imgs/navBarLogo.jpg";
 
 export default function Navbar() {
@@ -26,8 +27,12 @@ export default function Navbar() {
   return (
     <header className="relative z-30 w-full border-b border-[#d4af5f]/20 bg-[#0a0a0a]">
       <nav className="mx-auto grid h-20 w-full max-w-7xl grid-cols-[1fr_auto] items-center px-4 sm:h-24 sm:px-6 lg:grid-cols-[auto_1fr_auto] lg:gap-8 lg:px-10">
-        
-        <Link to="/" onClick={closeMobileMenu} className="flex min-w-0 items-center gap-3">
+
+        <Link
+          to="/"
+          onClick={closeMobileMenu}
+          className="flex min-w-0 items-center gap-3"
+        >
           <img
             src={logo}
             alt="El Perro Callejero"
@@ -61,9 +66,10 @@ export default function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 lg:flex lg:gap-4">
-          <button className="px-3 py-2 text-[0.8rem] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors duration-300 hover:text-white">
-            Buscar
-          </button>
+
+          <ProductSearch
+            buttonClassName="px-3 py-2 text-[0.8rem] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors duration-300 hover:text-white"
+          />
 
           <button className="bg-[#d4af5f] px-5 py-3 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-[#0a0a0a] transition-colors duration-300 hover:bg-[#e4c070] lg:px-6">
             Ordenar ahora
@@ -122,9 +128,11 @@ export default function Navbar() {
           </div>
 
           <div className="mt-4 flex flex-col gap-3">
-            <button className="w-full border border-white/10 px-4 py-3 text-[0.78rem] font-medium uppercase tracking-[0.12em] text-white/75 transition hover:border-white/20 hover:text-white">
-              Buscar
-            </button>
+
+            <ProductSearch
+              onNavigate={closeMobileMenu}
+              buttonClassName="w-full border border-white/10 px-4 py-3 text-[0.78rem] font-medium uppercase tracking-[0.12em] text-white/75 transition hover:border-white/20 hover:text-white"
+            />
 
             <button className="w-full bg-[#d4af5f] px-4 py-3 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-[#0a0a0a] transition-colors duration-300 hover:bg-[#e4c070]">
               Ordenar ahora
