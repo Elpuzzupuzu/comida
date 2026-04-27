@@ -43,9 +43,9 @@ export default function CategoryProductsPage() {
 
       <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-[#d4af5f]/5 to-transparent" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-3 pt-5 pb-16 sm:px-8 sm:pt-8 sm:pb-20 lg:px-12">
+      <div className="relative mx-auto w-full max-w-7xl px-3 pt-3 pb-16 sm:px-8 sm:pt-4 sm:pb-20 lg:px-12">
 
-        {/* Back link — área de toque generosa en mobile */}
+        {/* Back link */}
         <Link
           to="/menu"
           className="inline-flex items-center gap-2 min-h-[44px] text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[#d4af5f]/80 hover:text-[#d4af5f] transition-colors duration-300 group"
@@ -55,7 +55,7 @@ export default function CategoryProductsPage() {
         </Link>
 
         {/* Header */}
-        <header className="mt-2 mb-5 text-center sm:mt-5 sm:mb-6">
+        <header className="mt-1 mb-3 text-center sm:mt-2 sm:mb-4">
           <div className="flex items-center justify-center gap-3 mb-2 sm:gap-4 sm:mb-3">
             <span className="h-px flex-1 max-w-[40px] sm:max-w-[100px] bg-gradient-to-r from-transparent to-[#d4af5f]/50" />
             <span className="text-[0.55rem] sm:text-[0.6rem] font-bold uppercase tracking-[0.35em] text-[#d4af5f]">
@@ -68,20 +68,19 @@ export default function CategoryProductsPage() {
             {category.title}
           </h1>
 
-          <div className="mt-2 flex justify-center sm:mt-3">
+          <div className="mt-1.5 flex justify-center sm:mt-2">
             <div className="h-px w-10 bg-gradient-to-r from-transparent via-[#d4af5f]/70 to-transparent sm:w-12" />
           </div>
 
-          {/* Contador en su propia línea, limpio */}
           {products.length > 0 && (
-            <p className="mt-2 text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-[#d4af5f]/60 sm:mt-3">
+            <p className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-[#d4af5f]/60 sm:mt-2">
               {products.length} {products.length === 1 ? "producto" : "productos"}
             </p>
           )}
         </header>
 
-        {/* Divider — más discreto en mobile */}
-        <div className="mb-5 flex items-center gap-3 sm:mb-8 sm:gap-4">
+        {/* Divider */}
+        <div className="mb-3 flex items-center gap-3 sm:mb-5 sm:gap-4">
           <div className="h-px flex-1 bg-white/[0.06]" />
           <span className="text-[#d4af5f]/30 text-[0.6rem]">✦</span>
           <div className="h-px flex-1 bg-white/[0.06]" />
